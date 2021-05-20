@@ -32,6 +32,8 @@ dependencies:
 
 
 dev_dependencies:
+  dio: ^3.0.0
+
   flutter_test:
     sdk: flutter
 
