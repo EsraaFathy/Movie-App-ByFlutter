@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
         // appBar: AppBar(
         //   backgroundColor: const Color(0xFF051665),
         //   title: Title(
@@ -58,10 +58,18 @@ class _MyHomePageState extends State<MyHomePage> {
         //   ),
         //   leading: Icon(Icons.home),
         // ),
-        body: DefaultTabController(
+         DefaultTabController(
           length: 4,
           child: Scaffold(
             appBar: AppBar(
+        title:
+        Title(
+            color: Colors.white,
+            child: Text(
+              "Movie App",
+            ),
+          ),
+          leading: Icon(Icons.home),
               bottom: TabBar(
                 tabs: [
                   Tab(
@@ -276,12 +284,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                     color: const Color(0xFF051665),
                                     child: Row(
                                       children: [
-                                        Image.network(
-                                          'https://image.tmdb.org/t/p/w500' +
-                                              allDataListPopler[index]
-                                                  .posterPath,
-                                          height: 100,
-                                          width: 100,
+                                        Hero(
+                                          tag: 'https://image.tmdb.org/t/p/w500' + allDataListPopler[index].posterPath,
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: InkWell(
+                                              child: Image.network(
+                                                'https://image.tmdb.org/t/p/w500' +
+                                                    allDataListPopler[index].posterPath,
+                                                height: 100,
+                                                width: 100,
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                         Column(
                                           crossAxisAlignment:
@@ -430,13 +445,21 @@ class _MyHomePageState extends State<MyHomePage> {
                                     color: const Color(0xFF051665),
                                     child: Row(
                                       children: [
-                                        Image.network(
-                                          'https://image.tmdb.org/t/p/w500' +
-                                              allDataListTopRated[index]
-                                                  .posterPath,
-                                          height: 100,
-                                          width: 100,
+                                        Hero(
+                                          tag: 'https://image.tmdb.org/t/p/w500' + allDataListTopRated[index].posterPath,
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: InkWell(
+                                              child: Image.network(
+                                                'https://image.tmdb.org/t/p/w500' +
+                                                    allDataListTopRated[index].posterPath,
+                                                height: 100,
+                                                width: 100,
+                                              ),
+                                            ),
+                                          ),
                                         ),
+
                                         Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -586,13 +609,21 @@ class _MyHomePageState extends State<MyHomePage> {
                                     color: const Color(0xFF051665),
                                     child: Row(
                                       children: [
-                                        Image.network(
-                                          'https://image.tmdb.org/t/p/w500' +
-                                              allDataListUpComing[index]
-                                                  .posterPath,
-                                          height: 100,
-                                          width: 100,
+                                        Hero(
+                                          tag: 'https://image.tmdb.org/t/p/w500' + allDataListUpComing[index].posterPath,
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: InkWell(
+                                              child: Image.network(
+                                                'https://image.tmdb.org/t/p/w500' +
+                                                    allDataListUpComing[index].posterPath,
+                                                height: 100,
+                                                width: 100,
+                                              ),
+                                            ),
+                                          ),
                                         ),
+
                                         Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -711,7 +742,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-        ));
+        );
   }
 
   Future<List<Results>> getData() async {
