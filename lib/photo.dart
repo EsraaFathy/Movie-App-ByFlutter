@@ -101,7 +101,7 @@ class Results {
   String get releaseDate => _releaseDate;
   String get title => _title;
   bool get video => _video;
-  double get voteAverage => _voteAverage;
+  num get voteAverage => _voteAverage;
   int get voteCount => _voteCount;
 
   Results({
@@ -117,7 +117,7 @@ class Results {
       String releaseDate, 
       String title, 
       bool video, 
-      double voteAverage, 
+      num voteAverage,
       int voteCount}){
     _adult = adult;
     _backdropPath = backdropPath;
